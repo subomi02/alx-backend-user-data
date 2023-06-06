@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A simple end-to-end (E2E) integration test for `app.py`.
+"""Adetunji Olasubomi
 """
 import requests
 
@@ -27,7 +27,7 @@ def register_user(email: str, password: str) -> None:
 
 
 def log_in_wrong_password(email: str, password: str) -> None:
-    """Tests logging in with a wrong password.
+    """
     """
     url = "{}/sessions".format(BASE_URL)
     body = {
@@ -39,7 +39,7 @@ def log_in_wrong_password(email: str, password: str) -> None:
 
 
 def log_in(email: str, password: str) -> str:
-    """Tests logging in.
+    """
     """
     url = "{}/sessions".format(BASE_URL)
     body = {
@@ -53,7 +53,7 @@ def log_in(email: str, password: str) -> str:
 
 
 def profile_unlogged() -> None:
-    """Tests retrieving profile information whilst logged out.
+    """
     """
     url = "{}/profile".format(BASE_URL)
     res = requests.get(url)
@@ -61,7 +61,7 @@ def profile_unlogged() -> None:
 
 
 def profile_logged(session_id: str) -> None:
-    """Tests retrieving profile information whilst logged in.
+    """
     """
     url = "{}/profile".format(BASE_URL)
     req_cookies = {
@@ -73,7 +73,7 @@ def profile_logged(session_id: str) -> None:
 
 
 def log_out(session_id: str) -> None:
-    """Tests logging out of a session.
+    """
     """
     url = "{}/sessions".format(BASE_URL)
     req_cookies = {
@@ -85,7 +85,7 @@ def log_out(session_id: str) -> None:
 
 
 def reset_password_token(email: str) -> str:
-    """Tests requesting a password reset.
+    """
     """
     url = "{}/reset_password".format(BASE_URL)
     body = {'email': email}
@@ -98,7 +98,7 @@ def reset_password_token(email: str) -> str:
 
 
 def update_password(email: str, reset_token: str, new_password: str) -> None:
-    """Tests updating a user's password.
+    """
     """
     url = "{}/reset_password".format(BASE_URL)
     body = {
